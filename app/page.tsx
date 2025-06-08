@@ -369,7 +369,7 @@ export default function HomePage() {
       </section>
 
       {/* Enhanced Menu Preview */}
-      <section id="menu" className={`py-20 px-6 md:px-20 transition-all duration-700 ${
+<section id="menu" className={`py-20 px-6 md:px-20 transition-all duration-700 ${
         darkMode ? 'bg-gray-900' : 'bg-white'
       }`} data-animate>
         <div className={`transform transition-all duration-1000 delay-300 ${isVisible[1] ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
@@ -380,7 +380,93 @@ export default function HomePage() {
             darkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>Taste the authentic flavors of Indonesia</p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+          {/* Mobile: Horizontal scroll, Desktop: Grid */}
+          <div className="md:hidden">
+            <div className="flex overflow-x-auto pb-6 space-x-6 snap-x snap-mandatory scrollbar-hide" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+              {dishes.map((dish, index) => (
+                <div 
+                  key={dish.id}
+                  className={`group rounded-3xl shadow-lg hover:shadow-2xl transform hover:-translate-y-6 hover:rotate-1 transition-all duration-700 overflow-hidden border flex-shrink-0 w-80 snap-center ${
+                    darkMode 
+                      ? 'bg-gray-800 border-gray-700 hover:border-purple-500' 
+                      : 'bg-white border-gray-100 hover:border-orange-300'
+                  }`}
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={dish.image} 
+                      alt={dish.name} 
+                      className="w-full h-64 object-cover group-hover:scale-125 transition-transform duration-700 group-hover:rotate-2" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    <div className="absolute top-4 right-4">
+                      <button
+                        onClick={() => toggleLike(dish.id)}
+                        className={`p-3 rounded-full transition-all duration-500 transform hover:scale-125 ${
+                          likedDishes.has(dish.id) 
+                            ? 'bg-red-500 text-white scale-110 animate-pulse' 
+                            : `${darkMode ? 'bg-gray-800 text-gray-300 hover:text-red-500' : 'bg-white text-gray-400 hover:text-red-500'}`
+                        }`}
+                      >
+                        <Heart className={`w-5 h-5 ${likedDishes.has(dish.id) ? 'fill-current' : ''}`} />
+                      </button>
+                    </div>
+                    
+                    <div className="absolute bottom-4 left-4 bg-black bg-opacity-80 text-white px-4 py-2 rounded-full text-sm flex items-center backdrop-blur-sm">
+                      <Clock className="w-4 h-4 mr-2" />
+                      {dish.cookTime}
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className={`text-2xl font-bold transition-colors duration-300 ${
+                        darkMode 
+                          ? 'text-gray-100 group-hover:text-purple-400' 
+                          : 'text-gray-800 group-hover:text-orange-600'
+                      }`}>
+                        {dish.name}
+                      </h3>
+                      <div className={`flex items-center px-3 py-2 rounded-full transition-colors duration-300 ${
+                        darkMode ? 'bg-gray-700' : 'bg-yellow-100'
+                      }`}>
+                        <Star className="w-4 h-4 text-yellow-500 fill-current mr-1 animate-pulse" />
+                        <span className="text-sm font-semibold">{dish.rating}</span>
+                      </div>
+                    </div>
+                    <p className={`mb-4 leading-relaxed ${
+                      darkMode ? 'text-gray-300' : 'text-gray-600'
+                    }`}>{dish.description}</p>
+                    <div className="flex justify-between items-center">
+                      <span className={`text-2xl font-bold ${
+                        darkMode ? 'text-purple-400' : 'text-orange-600'
+                      }`}>{dish.price}</span>
+                      <button className={`px-6 py-3 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg font-bold flex items-center space-x-2 ${
+                        darkMode 
+                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white' 
+                          : 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white'
+                      }`}>
+                        <span>Order Now</span>
+                        <Zap className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Scroll indicator for mobile */}
+            <div className="flex justify-center mt-6">
+              <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                ← Swipe to explore more dishes →
+              </p>
+            </div>
+          </div>
+
+          {/* Desktop: Original grid layout */}
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
             {dishes.map((dish, index) => (
               <div 
                 key={dish.id}
