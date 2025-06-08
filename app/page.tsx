@@ -610,8 +610,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <div className="space-y-8">
               {[
-                { icon: MapPin, color: 'bg-orange-500', title: 'Address', content: 'Jl. Contoh Alamat No. 123, Yogyakarta' },
-                { icon: Phone, color: 'bg-green-500', title: 'Phone', content: '0812-3456-7890' },
+                { icon: MapPin, color: 'bg-orange-500', title: 'Address', content: 'Perum Kopkar Dwi Karya Blok B2 No. 31, Lampung Tengah, Lampung' },
+                { icon: Phone, color: 'bg-green-500', title: 'Phone', content: '0821-7520-3156' },
                 { icon: Mail, color: 'bg-blue-500', title: 'Email', content: 'pawonkitchen@email.com' }
               ].map((item, index) => (
                 <div key={index} className="flex items-center space-x-4 group">
@@ -672,7 +672,7 @@ export default function HomePage() {
           
           <div className="text-center mt-16">
             <a 
-              href="https://wa.me/6281234567890" 
+              href="https://wa.me/6282175203156" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl animate-pulse"
