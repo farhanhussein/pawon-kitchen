@@ -51,7 +51,7 @@ export default function HomePage() {
       id: 1,
       name: "Nasi Goreng",
       description: "Classic Indonesian fried rice with aromatic spices and fresh ingredients",
-      price: "Rp 25.000",
+      price: "Rp 15.000",
       rating: 4.8,
       image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop",
       cookTime: "15 min"
@@ -60,26 +60,54 @@ export default function HomePage() {
       id: 2,
       name: "Sate Ayam",
       description: "Tender grilled chicken skewers with rich peanut sauce and cucumber",
-      price: "Rp 30.000",
+      price: "Rp 20.000",
       rating: 4.9,
-      image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&h=300&fit=crop",
+      image: "https://unsplash.com/photos/LuBREV-wIik/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzQ5Mzc1MzExfA&force=true",
       cookTime: "20 min"
     },
     {
       id: 3,
       name: "Lasagna",
-      description: "Refreshing iced dessert with coconut milk, palm sugar, and pandan",
+      description: "Layers of pasta with rich meat sauce, creamy béchamel, and melted cheese, baked to perfection",
       price: "Rp 45.000",
       rating: 4.7,
       image: "https://unsplash.com/photos/-9ypyrRAjdw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzQ5MzUxNTE3fA&force=true",
       cookTime: "5 min"
-    }
+    },
+    {
+      id: 4,
+      name: "Spaghetti Bolognese",
+      description: "Classic Italian pasta dish featuring al dente spaghetti topped with a rich, slow-cooked meat sauce made with ground beef, tomatoes, garlic, onions, and herbs",
+      price: "Rp 45.000",
+      rating: 4.7,
+      image: "https://unsplash.com/photos/sA3wymYqyaI/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8U3BhZ2hldHRpJTIwQm9sb2duZXNlfGVufDB8fHx8MTc0OTM3ODYzM3ww&force=true",
+      cookTime: "5 min"
+    },
+    {
+      id: 5,
+      name: "Beef Steak",
+      description: "Juicy, tender cut of beef grilled or pan-seared to perfection, served with a savory sauce and sides like mashed potatoes or vegetables",
+      price: "Rp 70.000",
+      rating: 4.7,
+      image: "https://unsplash.com/photos/pe9dvM1rQkM/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzQ5Mzc4OTE0fA&force=true",
+      cookTime: "5 min"
+    },
+    {
+      id: 6,
+      name: "Iced Latte",
+      description: "A smooth blend of espresso and cold milk served over ice, perfect for a refreshing caffeine boost",
+      price: "Rp 20.000",
+      rating: 4.7,
+      image: "https://unsplash.com/photos/nAfXwDRIrFg/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mjd8fEljZWQlMjBsYXR0ZXxlbnwwfHx8fDE3NDkzNzkwMTZ8MA&force=true",
+      cookTime: "5 min"
+    },
   ];
 
   const testimonials: Testimonial[] = [
     { name: "Sari Dewi", text: "Rasanya benar-benar otentik! Seperti masakan ibu di rumah.", rating: 5 },
     { name: "Budi Santoso", text: "Nasi gorengnya juara, pasti akan balik lagi!", rating: 5 },
-    { name: "Maya Putri", text: "Tempatnya nyaman dan makanannya enak banget!", rating: 5 }
+    { name: "Maya Putri", text: "Tempatnya nyaman dan makanannya enak banget!", rating: 5 },
+    { name: "Farhan Hussein", text: "Tempatnya luas dan nyaman, kopinya enak banget, dan enak buat nugas", rating: 5 }
   ];
 
   // Initialize client-side only
